@@ -1,0 +1,135 @@
+﻿.detail-park {
+    width: 95%;
+    margin: 0 auto;
+    background-color: rgba(128, 128, 128, 0.23);
+    border-radius: 5px;
+    padding: 25px;
+}
+
+.detail-park-img {
+    width: 40%;
+    padding: 50px 50px 25px 50px;
+    margin: 0;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+    .detail-park-img img {
+        width: 98%;
+        display: block;
+        border-radius: 15px;
+        border: 7px solid;
+        border-color: rgba(128, 128, 128, 0.23);
+    }
+
+    .detail-park-img figcaption {
+        text-align: center;
+        margin: 5px auto 0 auto;
+        font-family: Arial, sans-serif;
+        font-size: .75em;
+        width: 90%;
+    }
+
+    .detail-park-img, .detail-top-info {
+        vertical-align: middle;
+    }
+
+.detail-top-info {
+    display: inline-block;
+    width: 45%;
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(197, 166, 138,.2);
+    border-radius: 2.5%;
+}
+
+.detail-park-title {
+    text-align: center;
+}
+
+    .detail-park-title h1 {
+        font-size: 2em;
+        text-decoration: underline;
+        color: #58704c;
+        margin: 0;
+        margin-bottom: 20px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+.detail-park-about {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 28px;
+}
+    .detail-park-about ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+
+    .detail-park-about ul li:first-child{
+        font-size: 1.25em;
+    }
+
+        .detail-park-about ul li:nth-child(2), .detail-park-about ul li:nth-child(3) {
+            font-size: .9em;
+        }
+
+.detail-park-about span {
+    font-weight: bold;
+}
+
+.detail-park-fun-facts {
+    width: 100%;
+}
+
+    .detail-park-fun-facts table {
+        margin: 0 auto;
+        width: 100%;
+        text-align: left;
+    }
+
+        .detail-park-fun-facts table tr:nth-child(2n+1) {
+            font-weight: bold;
+            font-size: 1.1em;
+            border-color: black;
+            border-style: solid;
+        }
+
+        .detail-park-fun-facts table tr td {
+            width: 33%;
+        }
+
+#get-forecast {
+    display: inline-block;
+    background-color: #433a33;
+    border: outset;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+    #get-forecast:hover {
+        background-color: #c5a68a;
+    }
+
+    #get-forecast a {
+        color: #c5a68a;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: bold;
+        border: none;
+        font-family: Arial, sans-serif;
+    }
+
+        #get-forecast a:hover {
+            color: #58704c;
+        }
+
+.detail-park-description {
+    margin: 50px auto 0 auto;
+    width: 50%;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}

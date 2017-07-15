@@ -1,0 +1,54 @@
+﻿.topParks-container {
+    width: 95%;
+    margin-left:auto;
+}
+
+.topParks-intro h1 {
+    font-size: 3em;
+    margin: 0;
+    text-decoration: underline;
+    color: #58704c;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.topParks-intro p {
+    font-size: 1.5em;
+    font-family: Arial, sans-serif;
+}
+
+.topParks-list {
+    padding-top: 30px;
+}
+
+.topParks-list__card {
+    padding-bottom: 20px;
+}
+
+.topParks-list__card__img,
+.topParks-list__card__details {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.topParks-list__card__name,
+.topParks-list__card__count {
+    display: inline-block;
+    font-size: 2em;
+    color: #58704c;
+    font-family: Arial, sans-serif;
+    padding-left: 20px;
+}
+.topParks-list__card__img {
+    width: 30%;
+    border-radius: 5%;
+    padding: 0;
+    margin: 40px, 10px, 0px, 0px;
+}
+
+.topParks-list__card__details {
+    width:69%;
+}
+
+.boldfont {
+    font-weight: bold;
+}

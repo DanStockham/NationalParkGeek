@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+@model List<string>
+
+<div class="topParks-container">
+    <div class="topParks-intro">
+        <h1>Our Most Favorite National Parks</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tortor odio, elementum a scelerisque vitae, euismod nec quam. Nam fermentum ante quis dolor vulputate porttitor. Aliquam egestas eget nunc ac blandit. Aliquam suscipit quis nunc vitae dictum. Morbi nec maximus mauris. Etiam ac sodales tortor, sit amet pulvinar nisi. In sed massa at metus egestas bibendum. Nam dui nibh, congue eu eros eget, laoreet dapibus velit.</p>
+    </div>
+
+    <div class="topParks-list">
+        @foreach(string park in Model)
+        {
+            string[] parkData = park.Split(',');
+            string parkCode = parkData[0];
+            string parkName = parkData[1];
+            string parkCount = parkData[2];
+
+            <div class="topParks-list__card">
+                <img class="topParks-list__card__img" src="~/Content/img/@(parkCode).jpg" alt="image of @parkName" />
+                <div class="topParks-list__card__details">
+                    <div class="topParks-list__card__name">@parkName</div>
+                    <div class="topParks-list__card__count">| Votes: <span class="boldfont">@parkCount</span></div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

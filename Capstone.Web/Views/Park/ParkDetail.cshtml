@@ -1,0 +1,59 @@
+﻿@using Capstone.Web.Models
+@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+@model Park
+
+<div class="detail-park">
+
+    <figure class="detail-park-img">
+        <img src="~/Content/img/@(Model.ParkCode).jpg" />
+        <figcaption>"@Model.Quote"<br /><span>~ @Model.QuoteSource</span></figcaption>
+    </figure>
+
+
+    <div class="detail-top-info">
+        <div class="detail-park-title"><h1>@Model.ParkName</h1></div>
+
+        <div class="detail-park-about">
+            <ul>
+                <li><span>Location: </span>@Model.State</li>
+                <li>@Model.ParkName covers a span of @Model.Acreage  square miles and is located at an elevation of @Model.ElevationInFeet feet above sea level.</li>
+                <li>If hiking is for you, @Model.ParkName has @Model.MilesOfTrail miles of trails that you can explore.</li>
+            </ul>
+        </div>
+
+        <div class="detail-park-fun-facts">
+            <table>
+                <tr>
+                    <td>Year Founded</td>
+                    <td>Climate</td>
+                    <td>Annual Visitor Count</td>
+                </tr>
+                <tr>
+                    <td>@Model.YearFounded</td>
+                    <td>@Model.Climate</td>
+                    <td>@Model.AnnualVisitorCount</td>
+                </tr>
+                <tr>
+                    <td>Entry Cost</td>
+                    <td>Number of Campsites</td>
+                    <td>Number of Animal Species</td>
+                </tr>
+                <tr>
+                    <td>$@Model.EntryFee</td>
+                    <td>@Model.NumberOfCampsites</td>
+                    <td>@Model.NumberAnimalSpecies</td>
+                </tr>
+            </table>
+        </div>
+        <div id="get-forecast">
+            <a href="@Url.Action("Forecast", "Weather", new { parkCode = @Model.ParkCode })">GET FIVE DAY FORCAST</a>
+        </div>
+    </div>
+    <div class="detail-park-description">
+        @Model.ParkDescription
+    </div>
+</div>
+

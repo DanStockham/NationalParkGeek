@@ -1,0 +1,110 @@
+﻿.forecast-container {
+    margin: 0 auto;
+    width: 90%;
+    font-size: 1.6em;
+    font-family: Arial, sans-serif;
+}
+
+    .forecast-container h1 {
+        text-align: center;
+        font-size: 1.5em;
+        margin: 0;
+        text-decoration: underline;
+        color: #58704c;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+#forcast-aligning-container {
+    margin-top: 30px;
+}
+
+#forecast-daily-container,
+.forecast-daily,
+#forecast-4day-container,
+.forecast-card {
+    display: inline-block;
+}
+
+
+.forecast-daily,
+.forecast-4day {
+    border-radius: 5px;
+    text-align: center;
+}
+
+#forecast-daily-container {
+    width: 23%;
+}
+
+.forecast-daily {
+    text-align: center;
+    width: 100%;
+}
+
+#forecast-daily-container,
+#forecast-4day-container {
+    padding: 15px;
+    background: rgba(128, 128, 128, 0.23);
+    vertical-align: middle;
+}
+
+.forecast-daily_img {
+    width:50%;
+}
+
+.forcast-temp-daily {
+    margin: 10px 0;
+}
+
+.forecast-daily__advisory {
+    padding-top: 20px;
+    width: 80%;
+    margin: 0 auto 10px auto;
+}
+
+#forecast-4day-container {
+    width: 70%;
+}
+
+
+.forecast-card {
+    margin: 0 10px;
+    width: 20%;
+}
+
+.forecast-card img {
+    width: 80%;
+}
+
+.forecast-card__temps {
+    margin: 10px auto;
+}
+
+.forecast-card img,
+.forecast-daily_img {
+    border: 7px solid rgba(128, 128, 128, 0.50);
+    border-radius: 5px;
+}
+
+.convert-btn {
+    display: inherit;
+    background-color: #433a33;
+    border: outset;
+    border-radius: 5px;
+    padding: 5px;
+    width: 300px;
+    text-align: center;
+    margin: 40px auto;
+}
+
+    .convert-btn a {
+        color: #c5a68a;
+        text-decoration: none;
+        font-size: 1em;
+        border: none;
+    }
+
+@media(min-screen: 1000px) {
+
+  
+}

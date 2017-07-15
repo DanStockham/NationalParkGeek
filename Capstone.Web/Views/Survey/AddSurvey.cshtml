@@ -1,0 +1,66 @@
+﻿@using Capstone.Web.Models
+@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+@{
+    Survey thisSurvey = new Survey();
+    List<SelectListItem> parkList = thisSurvey.Parks;
+}
+
+@model Survey
+
+<div id="survey">
+
+    <div id="survey-heading">
+        <h1>Favorite Park</h1>
+    </div>
+
+    <div id="survey-instructions"> Please fill out this short survey to let us know which National Park is your favorite!</div>
+    <div id="survey-form">
+        @using (Html.BeginForm("AddSurvey", "Survey", FormMethod.Post))
+        {
+            <div id="user-input">
+                <div class="survey-dropdown-field">
+                    @Html.Label("ParkCode", "National Park:")<br />
+                    @Html.DropDownListFor(m => m.ParkCode, parkList)<br />
+                    <span class="survey-validation">@Html.ValidationMessageFor(m => m.ParkCode)</span>
+                </div>
+
+                <div class="survey-text-field">
+                    @Html.LabelFor(m => m.Email):<br />
+                    @Html.TextBoxFor(m => m.Email)<br />
+                    <span class="survey-validation">@Html.ValidationMessageFor(m => m.Email)</span>
+                </div>
+
+                <div class="survey-dropdown-field">
+                    @Html.Label("State", "State of Residence:")<br />
+                    @Html.DropDownListFor(m => m.State, Survey.States)<br />
+                    <span class="survey-validation">@Html.ValidationMessageFor(m => m.State)</span>
+                </div>
+            </div>
+
+            <div id="survey-radio-buttons">
+
+                <div id="survey-activity-level-instruction">Please select your level of activity while visiting the park:</div>
+
+                <div class="survey-activity-field">
+                    @Html.RadioButtonFor(m => m.ActivityLevel, "inactive")Inactive
+                </div>
+                <div class="survey-activity-field">
+                    @Html.RadioButtonFor(m => m.ActivityLevel, "sedentary")Sedentary
+                </div>
+                <div class="survey-activity-field">
+                    @Html.RadioButtonFor(m => m.ActivityLevel, "active")Active
+                </div>
+                <div class="survey-activity-field">
+                    @Html.RadioButtonFor(m => m.ActivityLevel, "extremely active")Extremely Active
+                </div>
+                <br />
+                <span class="survey-validation">@Html.ValidationMessageFor(m => m.ActivityLevel)</span>
+            </div>
+
+            <div id="survey-button-div"><button id="survey-button">SUBMIT SURVEY!</button></div>
+        }
+    </div>
+</div>

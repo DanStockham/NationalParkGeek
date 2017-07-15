@@ -1,0 +1,110 @@
+﻿#survey {
+    width: 95%;
+    margin: auto;
+    background-color: rgba(128, 128, 128, 0.23);
+    border-radius: 5px;
+    padding: 25px;
+}
+
+
+#survey-heading {
+    margin: 0 auto;
+    text-align: center;
+}
+
+    #survey-heading h1 {
+        font-size: 3em;
+        text-decoration: underline;
+        color: #58704c;
+        margin: 0;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+#survey-instructions {
+    font-family: Arial, sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#survey-form {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 2em;
+}
+
+.survey-validation {
+    color: red;
+    font-weight: bold;
+}
+
+#user-input {
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    vertical-align: middle;
+    width: 30%;
+}
+
+.survey-dropdown-field {
+    margin: 5px;
+}
+
+#user-input select,
+#user-input input {
+    width: 100%;
+    height: 30px;
+    border: 1px inset;
+    font-size: .75em;
+}
+
+.survey-text-field {
+    margin: 5px;
+}
+
+#survey-radio-buttons {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 35px;
+    width: 67%;
+}
+
+#survey-activity-level-instruction {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.survey-activity-field {
+    display: inline-block;
+    font-size: .75em;
+}
+
+    .survey-activity-field input {
+      width: .9em;
+      height: .9em;
+      margin-right: 5px;
+      margin-left: 15px;
+    }
+
+#survey-button-div {
+    text-align: center;
+    display: block;
+}
+
+#survey-button {
+    color: #c5a68a;
+    margin-top: 25px;
+    background-color: #433a33;
+    border: outset;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: .75em;
+}
+
+    #survey-button:hover {
+        color: #58704c;
+        background-color: #c5a68a;
+    }

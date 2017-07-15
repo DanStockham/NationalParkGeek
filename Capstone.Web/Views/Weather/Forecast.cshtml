@@ -1,0 +1,100 @@
+﻿@using Capstone.Web.Models
+@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+@model List<Weather>
+
+<div class="forecast-container">
+
+    <h1>Five Day Forecast for @Model[0].ParkName</h1>
+
+    @{
+        if ((string)Session["tempType"] == "F")
+        {
+            <div class="convert-btn">
+                <a href="@Url.Action("Convert", "Weather", new {parkCode =  @Model[0].ParkCode})">Convert To Celcius</a>
+            </div>
+        }
+        else
+        {
+            <div class="convert-btn">
+                <a href="@Url.Action("Convert", "Weather", new {parkCode =  @Model[0].ParkCode})">Convert To Fahrenheit</a>
+            </div>
+        }
+    }
+    <div id="forcast-aligning-container">
+        <div id="forecast-daily-container">
+            <div class="forecast-daily">
+                <img class="forecast-daily_img" src="~/Content/img/@Model[0].WeatherImg(Model[0].Forecast)" alt="Daily forecast is @Model[0].Forecast" />
+                <div class="forcast-temp-daily">
+                    @if ((string)Session["tempType"] == "F")
+            {
+                        <div><span>High: </span>@Model[0].HighTemp <span> &deg;F</span></div>
+                    }
+                    else
+                    {
+                        <div>
+                            <span>High: </span>@Model[0].ToCelcius(Model[0].HighTemp) <span> &deg;C</span>
+                        </div>
+                    }
+                    <div>
+                        @if ((string)Session["tempType"] == "F")
+            {
+                            <div>
+                                <span>Low: </span>@Model[0].LowTemp <span> &deg;F</span>
+                            </div>
+                        }
+                        else
+                        {
+                            <div>
+                                <span>Low: </span>@Model[0].ToCelcius(@Model[0].LowTemp) <span> &deg;C</span>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="forecast-daily__advisory">
+                    @if (Model[0].PrintAdvisory(Model[0].Advisory) == "")
+            {
+                        <span>There is no weather advisory at this time. Please enjoy your visit!</span>
+                    }
+                    else
+                    {
+                        <span><strong>ADVISORY:</strong><br /></span>@Model[0].PrintAdvisory(Model[0].Advisory);
+            }
+                </div>
+            </div>
+        </div>
+        <div id="forecast-4day-container">
+            <div class="forecast-4day">
+                @foreach (Weather forecast in Model)
+            {
+                if (forecast.Day > 1)
+                {
+                        <div class="forecast-card">
+                            <img src="~/Content/img/@forecast.WeatherImg(forecast.Forecast)" alt="@forecast.Forecast" />
+                            <div class="forecast-card__temps">
+                                @if ((string)Session["tempType"] == "F")
+                    {
+                                    <div><span>High: </span>@forecast.HighTemp <span> &deg;F</span></div>
+                                }
+                                else
+                                {
+                                    <div><span>High: </span>@forecast.ToCelcius(forecast.HighTemp) <span> &deg;C</span></div>
+                                }
+                                @if ((string)Session["tempType"] == "F")
+                    {
+                                    <div><span>Low: </span>@forecast.LowTemp <span> &deg;F</span></div>
+                                }
+                                else
+                                {
+                                    <div><span>Low: </span>@forecast.ToCelcius(forecast.LowTemp) <span> &deg;C</span></div>
+                                }
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>

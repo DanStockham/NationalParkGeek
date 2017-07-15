@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/stylin.css">
+    <link rel="stylesheet" href="~/Content/home.css">
+    <link rel="stylesheet" href="~/Content/park_detail.css">
+    <link rel="stylesheet" href="~/Content/weather.css">
+    <link rel="stylesheet" href="~/Content/survey_form.css">
+    <link rel="stylesheet" href="~/Content/topParks.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="~/Content/img/logo.png" />
+        </div>
+        <nav>
+            <button>@Html.ActionLink("HOME", "Index", "Home")</button>
+            <button>@Html.ActionLink("SURVEY", "AddSurvey", "Survey")</button>
+            <button>@Html.ActionLink("TOP RANKED PARKS", "TopParks", "Survey")</button>
+        </nav>
+    </header>
+
+    <div class="body-container">
+        @RenderBody()
+    </div>
+</body>
+</html>
